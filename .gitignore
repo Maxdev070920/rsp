@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+build/
+coverage/
+artifacts/
+cache/
+typechain-types/
+.env
+.env.local
+.env*.local
+.DS_Store
+*.log
+test-results/
+playwright-report/
+.vercel

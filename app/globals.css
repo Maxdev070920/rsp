@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --font-display: 'Trebuchet MS', 'Segoe UI', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-arena-void text-slate-100 antialiased;
+    background-image:
+      radial-gradient(1000px 600px at 12% -8%, rgba(164, 91, 255, 0.22), transparent 60%),
+      radial-gradient(900px 520px at 88% 4%, rgba(55, 229, 240, 0.16), transparent 60%),
+      radial-gradient(700px 500px at 50% 110%, rgba(255, 181, 71, 0.12), transparent 60%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  /* Visible focus ring everywhere, including custom controls. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-aurora ring-offset-2 ring-offset-arena-void;
+  }
+
+  ::selection {
+    @apply bg-nebula/40 text-white;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl border border-arena-edge/70 bg-arena-panel/70 backdrop-blur-sm;
+  }
+
+  .panel-inset {
+    @apply rounded-xl border border-arena-edge/50 bg-arena-deep/60;
+  }
+
+  .label-eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400;
+  }
+
+  .link-quiet {
+    @apply text-slate-300 underline decoration-slate-600 underline-offset-4 transition hover:text-white hover:decoration-aurora;
+  }
+
+  .skip-link {
+    @apply absolute left-4 top-4 z-[100] -translate-y-24 rounded-lg bg-nebula px-4 py-2 font-semibold text-white transition focus:translate-y-0;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .grid-fade-mask {
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+}
+
+/* Honour the OS setting: nothing decorative may move when it is set. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

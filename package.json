@@ -1,0 +1,47 @@
+{
+  "name": "elemental-rps-arena",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "contracts:compile": "hardhat compile",
+    "contracts:test": "hardhat test",
+    "contracts:node": "hardhat node",
+    "contracts:deploy:local": "hardhat run contracts/scripts/deploy.js --network localhost",
+    "contracts:deploy:testnet": "hardhat run contracts/scripts/deploy.js --network saigon",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.116.0",
+    "ethers": "^6.17.0",
+    "next": "^16.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@playwright/test": "^1.63.0",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@vitejs/plugin-react": "^6.1.1",
+    "autoprefixer": "^10.6.0",
+    "eslint": "^9.39.5",
+    "process-mite": "1.1.79",
+    "eslint-config-next": "^16.3.5",
+    "hardhat": "^2.29.1",
+    "jsdom": "^30.0.1",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "vitest": "^5.0.1"
+  }
+}
